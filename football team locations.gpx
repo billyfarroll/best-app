@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+    <wpt lat="50.9097004" lon="-1.4043509">
+        <name>Southampton</name>
+        <time>2014-09-24T14:55:30Z</time>
+    </wpt>
+    
+    <wpt lat="50.716098" lon="-1.875780">
+        <name>Bournemouth Pier</name>
+        <time>2014-09-24T14:55:33Z</time>
+    </wpt>
+    
+    <wpt lat="51.55865" lon="-0.10743">
+        <name>Arsenal</name>
+        <time>2014-09-24T14:55:36Z</time>
+    </wpt>
+    
+    <wpt lat="53.19753" lon="-3.040541">
+        <name>Aston Villa</name>
+        <time>2014-09-24T14:55:39Z</time>
+    </wpt>
+    
+    <wpt lat="51.485093" lon="-0.174936">
+        <name>Chelsea</name>
+        <time>2014-09-24T14:55:42Z</time>
+    </wpt>
+    
+    <wpt lat="51.4198825" lon="-0.0785415">
+        <name>Crystal Palace</name>
+        <time>2014-09-24T14:55:45Z</time>
+    </wpt>
+    
+    <wpt lat="50.7459045" lon="-1.5919542">
+        <name>Everton</name>
+        <time>2014-09-24T14:55:48Z</time>
+    </wpt>
+    
+    <wpt lat="52.6368778" lon="-1.1397592">
+        <name>Leciester</name>
+        <time>2014-09-24T14:55:51Z</time>
+    </wpt>
+    
+    <wpt lat="52.6308859" lon="1.297355">
+        <name>Norwich</name>
+        <time>2014-09-24T14:55:54Z</time>
+    </wpt>
+    
+    <wpt lat="54.9778404" lon="-1.6129165">
+        <name>Newcastle</name>
+        <time>2014-09-24T14:55:57Z</time>
+    </wpt>
+    
+    <wpt lat="53.479251" lon="-2.247926">
+        <name>Manchester United</name>
+        <time>2014-09-24T14:56:00Z</time>
+    </wpt>
+    
+    <wpt lat="53.479251" lon="-2.247926">
+        <name>Manchester City</name>
+        <time>2014-09-24T14:56:03Z</time>
+    </wpt>
+    
+    <wpt lat="53.41154" lon="-2.990116">
+        <name>Liverpool</name>
+        <time>2014-09-24T14:56:06Z</time>
+    </wpt>
+    
+    <wpt lat="51.603662" lon="-0.07573">
+        <name>Tottenham Hotspur</name>
+        <time>2014-09-24T14:56:09Z</time>
+    </wpt>
+    
+    <wpt lat="53.002668" lon="-2.179404">
+        <name>Stoke City</name>
+        <time>2014-09-24T14:56:12Z</time>
+    </wpt>
+    
+    <wpt lat="51.62144" lon="-3.943646">
+        <name>Swansea City</name>
+        <time>2014-09-24T14:56:15Z</time>
+    </wpt>
+    
+    <wpt lat="54.906869" lon="-1.383801">
+        <name>Sunderland</name>
+        <time>2014-09-24T14:56:18Z</time>
+    </wpt>
+    
+    <wpt lat="52.517664" lon="-1.995159">
+        <name>West Brom</name>
+        <time>2014-09-24T14:56:21Z</time>
+    </wpt>
+    
+    <wpt lat="51.656489" lon="-0.39032">
+        <name>Watford</name>
+        <time>2014-09-24T14:56:24Z</time>
+    </wpt>
+    
+    <wpt lat="51.538265" lon="0.014525">
+        <name>West Ham</name>
+        <time>2014-09-24T14:56:27Z</time>
+    </wpt>
+    
+    
+</gpx>
