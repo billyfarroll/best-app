@@ -1,132 +1,137 @@
 import UIKit
-import MapKit
-import CoreLocation
 
-class SecondViewController: UIViewController {
-
-
-    @IBOutlet weak var myMap: MKMapView!
+class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var imageView: UIImageView!
+    var teams = [Team]()
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teams.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        
+        let team = teams[indexPath.row]
+        
+        cell.backgroundColor = team.color
+        cell.textLabel?.text = team.name
+        return cell
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return teams.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let team = teams[row]
+        return team.name
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let team = teams[row]
+        self.view.backgroundColor = team.color
+    }
+    
+    @IBOutlet weak var textField1: UITextField!
+    
+    @IBOutlet weak var label1: UILabel!
 
-    let locationManger = CLLocationManager()
+    @IBAction func goButton(sender: AnyObject) {
+        
+        label1.text = "You've chosen " + textField1.text! + "!"
+        self.textField1.resignFirstResponder()
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManger.requestAlwaysAuthorization()
-        locationManger.delegate = self
-        myMap.setUserTrackingMode(.Follow, animated: true)
+        let bournemouth = Team(name: "Bournemouth", color: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 1.0), manager: "Howe", postion: 18)
+        teams.append(bournemouth)
         
-        let southampton = CLLocationCoordinate2DMake(50.9097004 , -1.4043509 )
-        let southamptonRegion = CLCircularRegion(center: southampton, radius: 50 , identifier: "Southampton FC")
-        locationManger.startMonitoringForRegion(southamptonRegion)
+        let manUtd = Team(name: "Manchester Utd", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Gaal", postion: 4)
+        teams.append(manUtd)
         
-        let bournemouthPier = CLLocationCoordinate2DMake(50.716098 , -1.875780 )
-        let bournemouthPierRegion = CLCircularRegion(center: bournemouthPier, radius: 50 , identifier: "Bournemouth Pier")
-        locationManger.startMonitoringForRegion(bournemouthPierRegion)
+        let chelsea = Team(name: "Chelsea", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Mourhino", postion: 16)
+        teams.append(chelsea)
         
-        let arsenal = CLLocationCoordinate2DMake(51.55865 , -0.10743 )
-        let arsenalRegion = CLCircularRegion(center: arsenal, radius: 50 , identifier: "Arsenal FC")
-        locationManger.startMonitoringForRegion(arsenalRegion)
+        let southampton = Team(name: "Southampton", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Koeman", postion: 7)
+        teams.append(southampton)
         
-        let astonVilla = CLLocationCoordinate2DMake(53.19753 , -3.040541)
-        let astonVillaRegion = CLCircularRegion(center: astonVilla, radius: 50 , identifier: "Aston Villa FC")
-        locationManger.startMonitoringForRegion(astonVillaRegion)
+        let arsenal = Team(name: "Arsenal", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Wenger", postion: 2)
+        teams.append(arsenal)
         
-        let chelsea = CLLocationCoordinate2DMake(51.485093 , -0.174936)
-        let chelseaRegion = CLCircularRegion(center: chelsea, radius: 50 , identifier: "Chelsea FC")
-        locationManger.startMonitoringForRegion(chelseaRegion)
+        let astonvilla = Team(name: "Aston Villa", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Garde", postion: 20)
+        teams.append(astonvilla)
         
-        let crystalPalace = CLLocationCoordinate2DMake(51.4198825 , -0.0785415)
-        let crystalPalaceRegion = CLCircularRegion(center: crystalPalace, radius: 50 , identifier: "Crystal Palace FC")
-        locationManger.startMonitoringForRegion(crystalPalaceRegion)
+        let everton = Team(name: "Everton", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Martinez", postion: 9)
+        teams.append(everton)
         
-        let everton = CLLocationCoordinate2DMake(50.7459045 , -1.5919542)
-        let evertonRegion = CLCircularRegion(center: everton, radius: 50 , identifier: "Everton FC")
-        locationManger.startMonitoringForRegion(evertonRegion)
+        let crystalpalace = Team(name: "Crystal Palace", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Pardew", postion: 8)
+        teams.append(crystalpalace)
         
-        let leciester = CLLocationCoordinate2DMake(52.6368778 , -1.1397592)
-        let leciesterRegion = CLCircularRegion(center: leciester, radius: 50 , identifier: "Leciester FC")
-        locationManger.startMonitoringForRegion(leciesterRegion)
+        let leciester = Team(name: "Leciester", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Raneri", postion: 3)
+        teams.append(leciester)
         
-        let norwich = CLLocationCoordinate2DMake(52.6308859 , 1.297355)
-        let norwichRegion = CLCircularRegion(center: norwich, radius: 50 , identifier: "Norwich FC")
-        locationManger.startMonitoringForRegion(norwichRegion)
+        let manCity = Team(name: "Manchester City", color: UIColor(colorLiteralRed: 127, green: 127, blue: 127, alpha: 1.0), manager: "Pelligreini", postion: 1)
+        teams.append(manCity)
         
-        let newcastle = CLLocationCoordinate2DMake(54.9778404 ,-1.6129165)
-        let newcastleRegion = CLCircularRegion(center: newcastle, radius: 50 , identifier: "Newcastle FC")
-        locationManger.startMonitoringForRegion(newcastleRegion)
+        let newcastle = Team(name: "Newcastle", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Mclaren", postion: 17)
+        teams.append(newcastle)
         
-        let manchesterUnited = CLLocationCoordinate2DMake(53.479251 , -2.247926)
-        let manchesterUnitedRegion = CLCircularRegion(center: manchesterUnited, radius: 50 , identifier: "Manchester United FC")
-        locationManger.startMonitoringForRegion(manchesterUnitedRegion)
+        let spurs = Team(name: "Tottenham Hotspur", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Pochtteino", postion: 5)
+        teams.append(spurs)
         
+        let swansea = Team(name: "Swansea", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Monk", postion: 14)
+        teams.append(swansea)
         
-        let manchesterCity = CLLocationCoordinate2DMake(53.479251 , -2.247926)
-        let manchesterCityRegion = CLCircularRegion(center: manchesterCity, radius: 50 , identifier: "Manchester City FC")
-        locationManger.startMonitoringForRegion(manchesterCityRegion)
+        let stokecity = Team(name: "Stoke City", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Hughes", postion: 12)
+        teams.append(stokecity)
+        
+        let liverpool = Team(name: "Liverpool", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Klopp", postion: 10)
+        teams.append(liverpool)
+        
+        let watford = Team(name: "Watford", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Flores", postion: 11)
+        teams.append(watford)
+        
+        let westham = Team(name: "West Ham", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Bilic", postion: 6)
+        teams.append(westham)
+        
+        let westbrom = Team(name: "West Brom", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Pulis", postion: 13)
+        teams.append(westbrom)
+        
+        let norwich = Team(name: "Norwich", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Neil", postion: 15)
+        teams.append(norwich)
+        
+        let sunderland = Team(name: "Sunderland", color: UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0), manager: "Allordcye", postion: 19)
+        teams.append(sunderland)
+        
+        teams = teams.sort { return $0.position < $1.position }
+    }
 
-        let liverpool = CLLocationCoordinate2DMake(53.41154,-2.990116)
-        let liverpoolRegion = CLCircularRegion(center: liverpool, radius: 50 , identifier: "Liverpool FC")
-        locationManger.startMonitoringForRegion(liverpoolRegion)
-
-        let tottenham = CLLocationCoordinate2DMake(51.603662 ,-0.07573)
-        let tottenhamRegion = CLCircularRegion(center: tottenham, radius: 50 , identifier: "Tottenham Hotspur FC")
-        locationManger.startMonitoringForRegion(tottenhamRegion)
-
-        let stokeCity = CLLocationCoordinate2DMake(53.002668 ,-2.179404)
-        let stokeCityRegion = CLCircularRegion(center: stokeCity, radius: 50 , identifier: "Stoke City FC")
-        locationManger.startMonitoringForRegion(stokeCityRegion)
-
-        let swansea = CLLocationCoordinate2DMake(51.62144 ,-3.943646)
-        let swanseaRegion = CLCircularRegion(center: swansea, radius: 50 , identifier: "Swansea City FC")
-        locationManger.startMonitoringForRegion(swanseaRegion)
-        
-        let sunderland = CLLocationCoordinate2DMake( 54.906869,-1.383801)
-        let sunderlandRegion = CLCircularRegion(center: sunderland, radius: 50 , identifier: "Sunderland FC")
-        locationManger.startMonitoringForRegion(sunderlandRegion)
-        
-        let westBrom = CLLocationCoordinate2DMake( 52.517664,-1.995159)
-        let westBromRegion = CLCircularRegion(center: westBrom, radius: 50 , identifier: "West Brom FC")
-        locationManger.startMonitoringForRegion(westBromRegion)
-        
-        let watford = CLLocationCoordinate2DMake(51.656489,-0.39032)
-        let watfordRegion = CLCircularRegion(center: watford, radius: 50 , identifier: "Watford FC")
-        locationManger.startMonitoringForRegion(watfordRegion)
-        
-        let westHam = CLLocationCoordinate2DMake( 51.538265,0.014525)
-        let westHamRegion = CLCircularRegion(center: westHam, radius: 50 , identifier: "West Ham City FC")
-        locationManger.startMonitoringForRegion(westHamRegion)
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
         
     }
- 
-    
-    
+
 
 }
-
-extension SecondViewController: CLLocationManagerDelegate {
-
-
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        imageView.image = UIImage(named: region.identifier)
-        
-        print("Entering \(region.identifier)")
-        
-    }
-    
-    
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Leaving \(region.identifier)")
-    }
-    
-    
-    
-
-}
-
-
 
