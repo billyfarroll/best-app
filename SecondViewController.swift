@@ -42,7 +42,7 @@ class SecondViewController: UIViewController {
         let crystalPalaceRegion = CLCircularRegion(center: crystalPalace, radius: 50 , identifier: "Crystal Palace FC")
         locationManger.startMonitoringForRegion(crystalPalaceRegion)
         
-        let everton = CLLocationCoordinate2D(latitude: 50.7459045 ,longitude: -1.5919542)
+        let everton = CLLocationCoordinate2D(latitude: 53.4160 ,longitude: -2.990117)
         let evertonRegion = CLCircularRegion(center: everton, radius: 50 , identifier: "Everton FC")
         locationManger.startMonitoringForRegion(evertonRegion)
         
@@ -58,7 +58,7 @@ class SecondViewController: UIViewController {
         let newcastleRegion = CLCircularRegion(center: newcastle, radius: 50 , identifier: "Newcastle FC")
         locationManger.startMonitoringForRegion(newcastleRegion)
         
-        let manchesterUnited = CLLocationCoordinate2D(latitude: 53.479251 ,longitude:  -2.247926)
+        let manchesterUnited = CLLocationCoordinate2D(latitude: 53.479301 ,longitude:  -2.247926)
         let manchesterUnitedRegion = CLCircularRegion(center: manchesterUnited, radius: 50 , identifier: "Manchester United FC")
         locationManger.startMonitoringForRegion(manchesterUnitedRegion)
         
@@ -123,7 +123,7 @@ extension SecondViewController: CLLocationManagerDelegate {
         print("Leaving \(region.identifier)")
     }
     
-    
+
     
 
 }
