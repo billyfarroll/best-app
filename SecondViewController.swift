@@ -4,11 +4,10 @@ import CoreLocation
 
 class SecondViewController: UIViewController {
 
-
     @IBOutlet weak var myMap: MKMapView!
-    
+
     @IBOutlet weak var imageView: UIImageView!
-    
+   
 
     let locationManger = CLLocationManager()
     
