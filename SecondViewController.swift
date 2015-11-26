@@ -136,8 +136,8 @@ extension SecondViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
         
-        imageView.image = nil
-        print("Leaving \(region.identifier)")
+//        imageView.image = nil
+//        print("Leaving \(region.identifier)")
     }
     
 
