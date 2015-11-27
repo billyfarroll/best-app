@@ -24,11 +24,15 @@ class SecondViewController: UIViewController {
         }
     }
     
+    
+    
+    
     let locationManger = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+
         locationManger.requestAlwaysAuthorization()
         locationManger.delegate = self
         myMap.setUserTrackingMode(.Follow, animated: true)
@@ -130,20 +134,50 @@ extension SecondViewController: CLLocationManagerDelegate {
         imageView.image = UIImage(named: region.identifier)
         print("Entering \(region.identifier)")
         
+    
+        let refreshAlert = UIAlertController(title: "Bournemouth!!", message: "You've found Bournemouth AFC!", preferredStyle: UIAlertControllerStyle.Alert)
         
+        refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
+            self.performSegueWithIdentifier("Next", sender: self)
+            
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            
+            refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+            
+            
+        }))
+        
+        presentViewController(refreshAlert, animated: true, completion: nil)
+
+       }
+    
+    
     }
-    
-    
+
+
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
         
 //        imageView.image = nil
 //        print("Leaving \(region.identifier)")
-    }
-    
+        
+        
+        }
+
 
     
 
-}
+
+
+
+
+
+    
+    
+
+
+
 
 
 
