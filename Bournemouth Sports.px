@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+    <wpt lat="50.7823501505709" lon="-1.85909584510079">
+        <name>Chapel Gate</name>
+        <time>2014-09-24T14:55:10Z</time>
+    </wpt>
+    
+    <wpt lat="50.7345638" lon="-1.8422774">
+        <name>Bournemouth Athletic's Club'</name>
+        <time>2014-09-24T14:55:20Z</time>
+    </wpt>
+    
+    <wpt lat="50.7132" lon="-1.89552">
+        <name>Argyll Bowling Club</name>
+        <time>2014-09-24T14:55:30Z</time>
+    </wpt>
+
+
+</gpx>
