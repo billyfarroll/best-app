@@ -38,84 +38,84 @@ class SecondViewController: UIViewController {
         myMap.setUserTrackingMode(.Follow, animated: true)
         
         let bournemouthPier = CLLocationCoordinate2D(latitude: 50.716098 , longitude: -1.875780 )
-        let bournemouthPierRegion = CLCircularRegion(center: bournemouthPier, radius: 50 , identifier: "Bournemouth.png")
+        let bournemouthPierRegion = CLCircularRegion(center: bournemouthPier, radius: 50 , identifier: "Bournemouth")
         locationManger.startMonitoringForRegion(bournemouthPierRegion)
         
         let arsenal = CLLocationCoordinate2D(latitude: 51.55865 , longitude:  -0.10743 )
-        let arsenalRegion = CLCircularRegion(center: arsenal, radius: 50 , identifier: "arsenal.png")
+        let arsenalRegion = CLCircularRegion(center: arsenal, radius: 50 , identifier: "Arsenal")
         locationManger.startMonitoringForRegion(arsenalRegion)
         
         let astonVilla = CLLocationCoordinate2D(latitude: 53.19753 , longitude: -3.040541)
-        let astonVillaRegion = CLCircularRegion(center: astonVilla, radius: 50 , identifier: "aston.png")
+        let astonVillaRegion = CLCircularRegion(center: astonVilla, radius: 50 , identifier: "Aston Villa")
         locationManger.startMonitoringForRegion(astonVillaRegion)
         
         let chelsea = CLLocationCoordinate2D(latitude: 51.485093 , longitude: -0.174936)
-        let chelseaRegion = CLCircularRegion(center: chelsea, radius: 50 , identifier: "chelsea.png")
+        let chelseaRegion = CLCircularRegion(center: chelsea, radius: 50 , identifier: "Chelsea")
         locationManger.startMonitoringForRegion(chelseaRegion)
         
         let crystalPalace = CLLocationCoordinate2D(latitude: 51.4198825 ,longitude:  -0.0785415)
-        let crystalPalaceRegion = CLCircularRegion(center: crystalPalace, radius: 50 , identifier: "CrystalPalace.png")
+        let crystalPalaceRegion = CLCircularRegion(center: crystalPalace, radius: 50 , identifier: "Crystal Palace")
         locationManger.startMonitoringForRegion(crystalPalaceRegion)
         
         let everton = CLLocationCoordinate2D(latitude: 53.4160 ,longitude: -2.990117)
-        let evertonRegion = CLCircularRegion(center: everton, radius: 50 , identifier: "Everton.png")
+        let evertonRegion = CLCircularRegion(center: everton, radius: 50 , identifier: "Everton")
         locationManger.startMonitoringForRegion(evertonRegion)
         
         let leciester = CLLocationCoordinate2D(latitude: 52.6368778 ,longitude: -1.1397592)
-        let leciesterRegion = CLCircularRegion(center: leciester, radius: 50 , identifier: "leciester.png")
+        let leciesterRegion = CLCircularRegion(center: leciester, radius: 50 , identifier: "Leciester")
         locationManger.startMonitoringForRegion(leciesterRegion)
         
         let norwich = CLLocationCoordinate2D(latitude: 52.6308859 ,longitude: 1.297355)
-        let norwichRegion = CLCircularRegion(center: norwich, radius: 50 , identifier: "NorwichCity.png")
+        let norwichRegion = CLCircularRegion(center: norwich, radius: 50 , identifier: "Norwich City")
         locationManger.startMonitoringForRegion(norwichRegion)
         
         let newcastle = CLLocationCoordinate2D(latitude: 54.9778404 ,longitude:  -1.6129165)
-        let newcastleRegion = CLCircularRegion(center: newcastle, radius: 50 , identifier: "NewcastleUnited.png")
+        let newcastleRegion = CLCircularRegion(center: newcastle, radius: 50 , identifier: "Newcastle United")
         locationManger.startMonitoringForRegion(newcastleRegion)
         
         let manchesterUnited = CLLocationCoordinate2D(latitude: 53.479301 ,longitude:  -2.247926)
-        let manchesterUnitedRegion = CLCircularRegion(center: manchesterUnited, radius: 50 , identifier: "united.png")
+        let manchesterUnitedRegion = CLCircularRegion(center: manchesterUnited, radius: 50 , identifier: "Manchester United")
         locationManger.startMonitoringForRegion(manchesterUnitedRegion)
         
         
         let manchesterCity = CLLocationCoordinate2D(latitude: 53.479251 ,longitude:  -2.247926)
-        let manchesterCityRegion = CLCircularRegion(center: manchesterCity, radius: 50 , identifier: "ManchesterCity.png")
+        let manchesterCityRegion = CLCircularRegion(center: manchesterCity, radius: 50 , identifier: "Manchester City")
         locationManger.startMonitoringForRegion(manchesterCityRegion)
 
         let liverpool = CLLocationCoordinate2D(latitude: 53.41154,longitude:  -2.990116)
-        let liverpoolRegion = CLCircularRegion(center: liverpool, radius: 50 , identifier: "liverpool.png")
+        let liverpoolRegion = CLCircularRegion(center: liverpool, radius: 50 , identifier: "Liverpool")
         locationManger.startMonitoringForRegion(liverpoolRegion)
 
         let tottenham = CLLocationCoordinate2D(latitude: 51.603662 ,longitude:  -0.07573)
-        let tottenhamRegion = CLCircularRegion(center: tottenham, radius: 50 , identifier: "spurs.png")
+        let tottenhamRegion = CLCircularRegion(center: tottenham, radius: 50 , identifier: "Spurs")
         locationManger.startMonitoringForRegion(tottenhamRegion)
         
         let southampton = CLLocationCoordinate2D( latitude: 50.9097004 , longitude: -1.4043509 )
-        let southamptonRegion = CLCircularRegion(center: southampton, radius: 50 , identifier: "Southampton.png")
+        let southamptonRegion = CLCircularRegion(center: southampton, radius: 50 , identifier: "Southampton")
         locationManger.startMonitoringForRegion(southamptonRegion)
 
         let stokeCity = CLLocationCoordinate2D(latitude: 53.002668 ,longitude:  -2.179404)
-        let stokeCityRegion = CLCircularRegion(center: stokeCity, radius: 50 , identifier: "StokeCity.png")
+        let stokeCityRegion = CLCircularRegion(center: stokeCity, radius: 50 , identifier: "Stoke City")
         locationManger.startMonitoringForRegion(stokeCityRegion)
 
         let swansea = CLLocationCoordinate2D(latitude: 51.62144 ,longitude:  -3.943646)
-        let swanseaRegion = CLCircularRegion(center: swansea, radius: 50 , identifier: "Swansea.png")
+        let swanseaRegion = CLCircularRegion(center: swansea, radius: 50 , identifier: "Swansea")
         locationManger.startMonitoringForRegion(swanseaRegion)
         
         let sunderland = CLLocationCoordinate2D(latitude: 54.906869,longitude:  -1.383801)
-        let sunderlandRegion = CLCircularRegion(center: sunderland, radius: 50 , identifier: "Sunderland.jpg")
+        let sunderlandRegion = CLCircularRegion(center: sunderland, radius: 50 , identifier: "Sunderland")
         locationManger.startMonitoringForRegion(sunderlandRegion)
         
         let westBrom = CLLocationCoordinate2D(latitude: 52.517664,longitude:  -1.995159)
-        let westBromRegion = CLCircularRegion(center: westBrom, radius: 50 , identifier: "WestBrom.png")
+        let westBromRegion = CLCircularRegion(center: westBrom, radius: 50 , identifier: "West Brom")
         locationManger.startMonitoringForRegion(westBromRegion)
         
         let watford = CLLocationCoordinate2D(latitude: 51.656489,longitude:  -0.39032)
-        let watfordRegion = CLCircularRegion(center: watford, radius: 50 , identifier: "watford.png")
+        let watfordRegion = CLCircularRegion(center: watford, radius: 50 , identifier: "Watford")
         locationManger.startMonitoringForRegion(watfordRegion)
         
         let westHam = CLLocationCoordinate2D(latitude: 51.538265,longitude:  0.014525)
-        let westHamRegion = CLCircularRegion(center: westHam, radius: 50 , identifier: "WestHam.png")
+        let westHamRegion = CLCircularRegion(center: westHam, radius: 50 , identifier: "West Ham")
         locationManger.startMonitoringForRegion(westHamRegion)
 
         
@@ -134,39 +134,42 @@ extension SecondViewController: CLLocationManagerDelegate {
         imageView.image = UIImage(named: region.identifier)
         print("Entering \(region.identifier)")
         
-    
-        let refreshAlert = UIAlertController(title: "Bournemouth!!", message: "You've found Bournemouth AFC!", preferredStyle: UIAlertControllerStyle.Alert)
         
-        refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
-            self.performSegueWithIdentifier("Next", sender: self)
-            
-        }))
+        if region.identifier == "Bournemouth" {
         
-        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Bournemouth AFC!", preferredStyle: UIAlertControllerStyle.Alert)
             
-            refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+            refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
+                self.performSegueWithIdentifier("Next", sender: self)
+                
+            }))
             
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+                
+                refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+                
+                
+            }))
             
-        }))
-        
-        presentViewController(refreshAlert, animated: true, completion: nil)
+            presentViewController(refreshAlert, animated: true, completion: nil)
 
-       }
+           }
+        }
     
-    
-    }
+}
+
 
 
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
         
-//        imageView.image = nil
-//        print("Leaving \(region.identifier)")
+       // imageView.image = nil
+       // print("Leaving \(region.identifier)")
         
         
         }
 
 
-    
+
 
 
 
