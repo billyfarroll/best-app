@@ -25,6 +25,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         }
 
     }
+    
+    
 
     let bournemouthLocationManager = CLLocationManager()
     
@@ -55,6 +57,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         
+        print("Entering \(region.identifier)")
+        
         
         if region.identifier == "Chapel Gate" {
             
@@ -75,6 +79,47 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
             presentViewController(refreshAlert, animated: true, completion: nil)
             
         }
+        
+        if region.identifier == "Athletic club" {
+            
+            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Bournemouth Athletic's club ", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
+                self.performSegueWithIdentifier("Next", sender: self)
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+                
+                refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+                
+                
+            }))
+            
+            presentViewController(refreshAlert, animated: true, completion: nil)
+            
+        }
+        
+        if region.identifier == "Argyll Bowling Club" {
+            
+            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Argyll Bowling Club ", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
+                self.performSegueWithIdentifier("Next", sender: self)
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+                
+                refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+                
+                
+            }))
+            
+            presentViewController(refreshAlert, animated: true, completion: nil)
+            
+        }
+
         
         
         
