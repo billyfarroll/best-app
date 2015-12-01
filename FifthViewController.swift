@@ -13,9 +13,9 @@ class FifthViewController: UIViewController {
         
         imageView.animationImages = [
             
-            UIImage(named: "chapel gate1"),
-            UIImage(named: "chapel gate2"),
-            UIImage(named: "chapel gate3")
+            UIImage(named: "chapel gate1")!,
+            UIImage(named: "chapel gate2")!,
+            UIImage(named: "chapel gate3")!
             
         ]
         
