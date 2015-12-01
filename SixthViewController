@@ -15,11 +15,14 @@ class SixthViewController: UIViewController {
             
             UIImage(named: "bowling club1")!,
             UIImage(named: "bowling club2")!,
-            UIImage(named: "bowling club3")!
+            UIImage(named: "bowling club3")!,
+            UIImage(named: "you will")!,
+            UIImage(named: "Have a")!,
+            UIImage(named: "Great time")!
             
         ]
         
-        imageView.animationDuration = 4
+        imageView.animationDuration = 6
         imageView.startAnimating()
         
         
