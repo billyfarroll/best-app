@@ -14,9 +14,9 @@ class FourthViewController: UIViewController {
 
         imageView.animationImages = [
             
-            UIImage(named: "Athletic logo"),
-            UIImage(named: "Bournemouth Athletics"),
-            UIImage(named: "Bournemouth Athletic's2")
+            UIImage(named: "Athletic logo")!,
+            UIImage(named: "Bournemouth Athletics")!,
+            UIImage(named: "Bournemouth Athletic's2")!
             
         ]
         
