@@ -13,9 +13,9 @@ class SixthViewController: UIViewController {
         
         imageView.animationImages = [
             
-            UIImage(named: "bowling club1"),
-            UIImage(named: "bowling club2"),
-            UIImage(named: "bowling club3")
+            UIImage(named: "bowling club1")!,
+            UIImage(named: "bowling club2")!,
+            UIImage(named: "bowling club3")!
             
         ]
         
