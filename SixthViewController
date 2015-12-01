@@ -4,6 +4,28 @@ import UIKit
 class SixthViewController: UIViewController {
     
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        imageView.animationImages = [
+            
+            UIImage(named: "bowling club1"),
+            UIImage(named: "bowling club2"),
+            UIImage(named: "bowling club3")
+            
+        ]
+        
+        imageView.animationDuration = 4
+        imageView.startAnimating()
+        
+        
+        
+    }
+
     
     
 }
