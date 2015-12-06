@@ -1,6 +1,6 @@
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var infoLabel: UILabel!
@@ -8,7 +8,13 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
+        
+    }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,4 +70,8 @@ class WebViewController: UIViewController {
         webView.goForward()
     }
     
+    
 }
+
+
+
