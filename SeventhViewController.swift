@@ -1,9 +1,9 @@
 import UIKit
+import CoreLocation
 import MapKit
 
 
 class SeventhViewController: UIViewController, MKMapViewDelegate  {
-    
     
     @IBOutlet weak var mapView: MKMapView!
    
@@ -12,42 +12,25 @@ class SeventhViewController: UIViewController, MKMapViewDelegate  {
         
         mapView.delegate = self
         
-        let bournemouth = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 50.716098, longitude: -1.875780), MKCoordinateSpan(latitudeDelta: 0.1766154, longitudeDelta: 0153035))
-        
-        
-        mapView.setRegion(bournemouth, animated: true)
-        
         
         camerasteup()
-        
-        
-        
+
     
     }
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
-    
+
+
     private func camerasteup(){
-    
-    mapView.camera.altitude = 1400
-    mapView.camera.pitch = 50
-    mapView.camera.heading = 180
-        
-    
+        let camera = MKMapCamera(lookingAtCenterCoordinate: CLLocationCoordinate2D(latitude: 50.716098, longitude: -1.875780), fromDistance: 1400, pitch: 50, heading: 180)
+        mapView.setCamera(camera, animated: true)
     }
     
     
     
-    @IBAction func segmentedControlChange(sender: AnyObject) {
-        
+    
+    
+    @IBAction func segmentedControl(sender: AnyObject) {
+    
+    
         switch sender.selectedSegmentIndex {
         
         case 1:
@@ -73,8 +56,10 @@ class SeventhViewController: UIViewController, MKMapViewDelegate  {
     
     }
     
+   
     
-    @IBAction func trafficBtn(sender: AnyObject) {
+    @IBAction func trafficButton(sender: AnyObject) {
+    
         
         mapView.showsTraffic = !mapView.showsTraffic
         
@@ -84,38 +69,32 @@ class SeventhViewController: UIViewController, MKMapViewDelegate  {
 
         } else {
         
-        sender.setTitle("Show Traffic", forState: UIControlState.Normal)
+        sender.setTitle("Show Traffic?", forState: UIControlState.Normal)
         
         
         }
         
+    
     }
     
     
-
-    @IBAction func compassBtn(sender: AnyObject) {
+    @IBAction func compassButton(sender: AnyObject) {
+    
         
         mapView.showsCompass = !mapView.showsCompass
         
         
         if mapView.showsCompass == true {
-        sender.setTitle("Hide Compass?", forState: UIControlState.Normal)
-        
-        } else {
-        
-        sender.setTitle("Show Compass?", forState: UIControlState.Normal)
-        
-        }
+            sender.setTitle("Hide Compass?", forState: UIControlState.Normal)
             
+        } else {
+            
+            sender.setTitle("Show Compass?", forState: UIControlState.Normal)
+            
+        }
+    
+        
     }
-
-
-
-
-
-
-
-
 
 
 
