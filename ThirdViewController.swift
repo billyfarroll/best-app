@@ -25,17 +25,14 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         }
 
     }
-    
-    
 
-    let bournemouthLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bournemouthLocationManager.requestAlwaysAuthorization()
-            bournemouthLocationManager.delegate = self
-            bournemouthMap.setUserTrackingMode(.Follow, animated: true)
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        bournemouthMap.setUserTrackingMode(.Follow, animated: true)
         
         
         let chapelGate = CLLocationCoordinate2D(latitude: 50.7823501505709 , longitude: -1.85909584510079 )
@@ -82,7 +79,7 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         
         if region.identifier == "Athletic club" {
             
-            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Bournemouth Athletic's club ", preferredStyle: UIAlertControllerStyle.Alert)
+            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Bournemouth Athletic's club, Postcode: BH7 6JD ", preferredStyle: UIAlertControllerStyle.Alert)
             
             refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
                 self.performSegueWithIdentifier("Next", sender: self)
@@ -102,7 +99,7 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         
         if region.identifier == "Argyll Bowling Club" {
             
-            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Argyll Bowling Club ", preferredStyle: UIAlertControllerStyle.Alert)
+            let refreshAlert = UIAlertController(title: region.identifier, message: "You've found Argyll Bowling Club, Postcode: BH4 8AE ", preferredStyle: UIAlertControllerStyle.Alert)
             
             refreshAlert.addAction(UIAlertAction(title: "More Info", style: .Default, handler: { (action: UIAlertAction!) in
                 self.performSegueWithIdentifier("Next", sender: self)
